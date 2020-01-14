@@ -1,21 +1,18 @@
-import React, { Fragment } from 'react';
-
-import Hero from '../shared/Hero';
+import React from 'react';
+import { ToggleSwitch } from '@momentum-ui/react';
+import { LightContext } from '../App';
 
 const HomePage = () => {
+  const lightStatus = React.useContext(LightContext);
   return (
-    <Fragment>
-      <Hero title="Get Started" description="Add your content below." textAlign="left" />
-      <div className="row">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Nulla quis varius elit. Vestibulum vel pellentesque
-          lectus. Mauris vitae rutrum sapien, in scelerisque metus. Duis eget
-          ullamcorper ex, non consectetur orci. Sed et diam massa. Donec nec
-          purus ex. Nunc diam dui, tempus ut blandit nec, aliquam vitae elit.
-        </p>
-      </div>
-    </Fragment>
+    <div className="row">
+      <ToggleSwitch
+        checked={lightStatus.status}
+        onChange={() => lightStatus.toggleFn()}
+        label='Toggle Light'
+        htmlId='testToggleSwitch1'
+      />
+    </div>
   );
 };
 

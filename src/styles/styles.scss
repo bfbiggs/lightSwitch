@@ -4,3 +4,7 @@ $images-path: "~@momentum-ui/core/images";
 
 @import "~@momentum-ui/core/scss/momentum-ui";
 @import '~@momentum-ui/core/scss/layouts/sites';
+
+.md--dark {
+  background-color: black;
+}

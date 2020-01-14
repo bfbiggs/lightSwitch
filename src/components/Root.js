@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import App from './App';
 
 export default class Root extends Component {
   render() {
-    const { store } = this.props;
+    const { history, store } = this.props;
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <ConnectedRouter history={history}>
           <App />
-        </BrowserRouter>
+        </ConnectedRouter>
       </Provider>
     );
   }
